@@ -11,6 +11,7 @@ public class Employee {
     private String empFirstName;
     private String empLastName;
     private double empSalary;
+    private double hello;
 
     // Default constructor
     public Employee()
