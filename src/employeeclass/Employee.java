@@ -88,5 +88,9 @@ public class Employee {
         System.out.println("Employee Last Name: " + empLastName);
         System.out.println("Employee's Salary: " + empSalary);
     }
+    
+    private void HelloWorld() {
+        System.out.println("Hello World");
+    }
 }
 // ------------------------ 0o0o0o End of File 0o0o0o --------------------------
