@@ -1,6 +1,6 @@
   # This is a basic workflow that is manually triggered
 
-name: TestPROGPOE
+name: Employee
 
 # Controls when the workflow will run
 on:
