@@ -24,14 +24,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-     # list contents or directory
-      - name: List contents
-        run: ls
-     # Compiles classes to test 
-      - name: compile classes
-        working-directory: ./src
-        run: java -cp "../junit-jupiter-api-5.6.0.jar" ./employeeclass/MainClass.java ./employeeclass/Employee.java "../test/employeeclass/EmployeeTest.java"  
 
        # Compile your classes
       - name: Compile classes
