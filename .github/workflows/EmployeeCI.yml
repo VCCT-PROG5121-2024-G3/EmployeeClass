@@ -28,9 +28,14 @@ jobs:
        # Compile your classes
       - name: Compile classes
         working-directory: ./src
-        run: javac -cp javac -cp "../junit-jupiter-api-5.6.0.jar" employeeclass/MainClass.java employeeclass/Employee.java employeeclass/MainClass.java employeeclass/Employee.java employeeclass/EmployeeTest.java
+        run: javac -cp javac -cp "../junit-jupiter-api-5.6.0.jar" employeeclass/MainClass.java employeeclass/Employee.java employeeclass/MainClass.java employeeclass/Employee.java
 
+      # Compile your tests
+      - name: Compile tests
+        working-directory: ./test
+        run: javac -jar "../junit-jupiter-api-5.6.0.jar" -cp "." /test/employeeclass/EmployeeTest.java
+        
       # Run your tests
       - name: Run tests
         working-directory: ./test
-        run: java -cp "../junit-jupiter-api-5.6.0.jar" -jar "../testresources/junit-jupiter-api-5.6.0.jar" --select-class employeeclass.EmployeeTest
+        run: java -cp "../junit-jupiter-api-5.6.0.jar" -jar "../testresources/junit-jupiter-api-5.6.0.jar" --select-class employee.EmployeeTest
