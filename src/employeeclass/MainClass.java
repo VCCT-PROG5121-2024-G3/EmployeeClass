@@ -26,6 +26,8 @@ public class MainClass
         // Print new message
         System.out.println("\nNew message with updated Employee's last name");
         emp.PrintDetails();
+        
+        int num = 1;
                 
                 
     }   
