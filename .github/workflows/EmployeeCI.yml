@@ -31,7 +31,7 @@ jobs:
      # Compiles classes to test 
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../junit-jupiter-api-5.6.0.jar" ./employeeclass/Employee.java ./employeeclass/MainClass.java  "../test/employeeclass/EmployeeTest.java"  
+        run: java -cp "../junit-jupiter-api-5.6.0.jar" ./employeeclass/Employee.java ./employeeclass/MainClass.java  "../test/employeeclass/EmployeeTest.java"  
 
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
@@ -42,7 +42,7 @@ jobs:
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
         working-directory: ./src/emplopyeeclass
-        run: cp -t  "../../test/poe_task2" Employee.class
+        run: cp -t  "../../test/employeeclass" Employee.class
       
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
