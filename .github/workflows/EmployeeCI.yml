@@ -33,37 +33,17 @@ jobs:
         working-directory: ./src
         run: java -cp "../junit-jupiter-api-5.6.0.jar" ./employeeclass/MainClass.java ./employeeclass/Employee.java "../test/employeeclass/EmployeeTest.java"  
 
-    # list contents of src to verify that classess compiled 
-      - name: List contents of src directory after compile
-        working-directory: ./src/employeeclass
-        run: ls
-        
-        
-       # copy compiled classes to test directory 
-      - name : copy compiled classes to testresources directory 
-        working-directory: ./src/emplopyeeclass
-        run: cp -t  "../../test/employeeclass" Employee.class
-      
-        #copy compiled tests 
-      - name : copy compiled Test classes to testresources directory 
-        working-directory: ./test/employeeclass
-        run: cp -t  "../../testresources/" EmployeeTest.class
-        
-        # list contents or directory
-      - name: List contents test package
-        working-directory: ./test/employeeclass
-        run: ls
-        
-        #run Message Class tests and output report 
-      - name: run Messages Class tests and create report 
+       # Compile your classes
+      - name: Compile classes
+        working-directory: ./src
+        run: javac -cp "../junit-jupiter-api-5.6.0.jar:." employeeclass/MainClass.java employeeclass/Employee.java
+
+      # Compile your tests
+      - name: Compile tests
         working-directory: ./test
-        run: |
-         ls
-         java -jar  "../testresources/junit-jupiter-api-5.6.0.jar" -cp "." --select-class  employeeclass.EmployeeTest  
-         
-            #run Message Class tests and output report 
-      - name: run Response Class tests and create report 
+        run: javac -cp "../junit-jupiter-api-5.6.0.jar:../src:." employeeclass/EmployeeTest.java
+
+      # Run your tests
+      - name: Run tests
         working-directory: ./test
-        run: |
-         ls
-         java -jar  "../testresources/junit-jupiter-params-5.6.0.jar" -cp "." --select-class  employeeclass.EmployeeTest 
+        run: java -jar "../testresources/junit-jupiter-api-5.6.0.jar" --class-path "../src:." -cp "." org.junit.platform.console.ConsoleLauncher --select-class employeeclass.EmployeeTest
