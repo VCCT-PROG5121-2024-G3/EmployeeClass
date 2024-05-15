@@ -33,7 +33,7 @@ jobs:
       # Compile your tests
       - name: Compile tests
         working-directory: ./test
-        run: javac -cp "../junit-jupiter-api-5.6.0.jar:../src:." test/employeeclass/EmployeeTest.java
+        run: javac -cp "../junit-jupiter-api-5.6.0.jar:../src:." test/EmployeeTest.java
         
       # Run your tests
       - name: Run tests
