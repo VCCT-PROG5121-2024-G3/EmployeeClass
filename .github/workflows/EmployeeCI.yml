@@ -31,7 +31,7 @@ jobs:
      # Compiles classes to test 
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../testresources/junit-jupiter-api-5.6.0.jar" "../testresources/junit-jupiter-params-5.6.0.jar" "../testresources/junit-jupiter-engine-5.6.0.jar" ./employeeclass/Employee.java ./employeeclass/MainClass.java  "../test/employeeclass/EmployeeTest.java"  
+        run: javac -cp "../junit-jupiter-api-5.6.0.jar" ./employeeclass/Employee.java ./employeeclass/MainClass.java  "../test/employeeclass/EmployeeTest.java"  
 
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
